@@ -17,7 +17,7 @@
 
 .bg-img {
     background-image: url('../images/bg-sections.png');
-    background-position: center;
+    background-position: 100% 100%;
     background-size: cover;
 }
 
@@ -30,7 +30,7 @@
     cursor: pointer;
     position: absolute;
     bottom: 15%;
-    right: -1%;
+    right: -50%;
     display: flex;
     justify-content: center;
 }
@@ -49,6 +49,7 @@
     background: var(--White, #FFF);
     border: none;
     border: 1px solid transparent;
+    transition: 500ms all;
 }
 
 dl,
@@ -97,6 +98,7 @@ ul {
 /* hro section */
 
 .hro-btn-bg {
+    z-index: 3;
     display: flex;
     padding: 12px 24px;
     align-items: center;
@@ -104,6 +106,7 @@ ul {
     border-radius: 82px;
     background: var(--White, #FFF);
     border: 1px transparent solid;
+    transition: 400ms all;
 }
 
 .hro-btn-bg:hover {
@@ -117,8 +120,10 @@ ul {
 }
 
 .hro-btn-tran {
+    z-index: 3;
+     transition: 400ms all;
     margin-left: 30px;
-    padding: 12px 32px;
+    padding: 8px 28px;
     align-items: center;
     gap: 10px;
     border-radius: 82px;
@@ -134,12 +139,10 @@ ul {
 
 .bg-hero {
     position: relative;
-    z-index:2;
-    background-image: url(../images/hro-bg-img.png);
+    background-image: url(/assets/images/herobg.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    filter: opacity(0.6);
+    background-size: 100% 100%;
+    background-position:cover;
 }
 
 .logo {
@@ -147,7 +150,6 @@ ul {
 }
 
 .hro-img {
-    z-index: 10 !important;
     cursor: pointer;
     transition: 200ms;
 }
@@ -178,6 +180,8 @@ p {
 }
 
 .card-bttn {
+    
+    transition: 600ms all;
     background: transparent;
     padding: 12px 32px;
     gap: 10px;
@@ -259,17 +263,12 @@ p {
     cursor: pointer;
 }
 
-.hover-card:hover {
-    transform: scale(1.2);
-    z-index: 1;
-    margin-top: -7px;
-}
-
 .para-about {
     max-width: 570px;
 }
 
 .card-hover-bttn {
+    transition: 400ms all;
     background: transparent;
     padding: 12px 32px;
     gap: 10px;
@@ -330,6 +329,7 @@ p {
 .hover-card:hover:after{
     opacity: 1;
 }
+
 .fttr-span {
     cursor: pointer;
 }
@@ -447,6 +447,123 @@ p {
     cursor: pointer;
     transform: scale(1.03);
 }
+.about-line::after {
+    content: '';
+    position: absolute;
+    top: -8%;
+    left: -15%;
+    height: 1px;
+    width: 170%;
+    background: #FFF;
+    transform: rotate(-2deg);
+}
+
+.about-line::before {
+    content: '';
+    position: absolute;
+    bottom: -8%;
+    right: -15%;
+    height: 1px;
+    width: 170%;
+    background: #FFF;
+    transform: rotate(-2deg);
+}
+
+.project-line,
+.servie-line,
+.about-line,
+.upcoming-line,
+.hro-line {
+    position: relative;
+}
+
+.project-line::after {
+    content: '';
+    position: absolute;
+    top: -8%;
+    left: -2%;
+    height: 1px;
+    width: 150%;
+    background: black;
+    transform: rotate(-2deg);
+}
+
+.project-line::before {
+    content: '';
+    position: absolute;
+    bottom: -8%;
+    right: -2%;
+    height: 1px;
+    width: 150%;
+    background: black;
+    transform: rotate(-2deg);
+}
+
+.servie-line::after {
+    content: '';
+    position: absolute;
+    top: -13%;
+    left: 40%;
+    height: 1px;
+    width: 32%;
+    background: white;
+    transform: rotate(-2deg);
+}
+
+.servie-line::before {
+    content: '';
+    position: absolute;
+    bottom: -8%;
+    right: 40%;
+    height: 1px;
+    width: 31%;
+    background: white;
+    transform: rotate(-2deg);
+}
+
+.upcoming-line::after {
+    content: '';
+    position: absolute;
+    top: -18%;
+    left: 39%;
+    height: 1px;
+    width: 29%;
+    background: white;
+    transform: rotate(-2deg);
+}
+
+.upcoming-line::before {
+    content: '';
+    position: absolute;
+    bottom: -8%;
+    right: 38%;
+    height: 1px;
+    width: 31%;
+    background: white;
+    transform: rotate(-2deg);
+}
+
+.hro-line::after {
+    content: '';
+    position: absolute;
+    top: -8%;
+    left: 15%;
+    height: 1px;
+    width: 95%;
+    background: white;
+    transform: rotate(-2deg);
+}
+
+.hro-line::before {
+    content: '';
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+    height: 1px;
+    width: 100%;
+    background: white;
+    transform: rotate(-2deg);
+}
 @media (max-width:992px) {
     .circle1 {
         position: absolute;
@@ -489,7 +606,7 @@ p {
         justify-content: center;
         flex-direction: column;
         transition: all 500ms;
-        z-index: 3;
+        z-index: 10;
     }
 
     .click_box {
@@ -523,126 +640,18 @@ p {
         height: unset;
         width: unset;
     }
-
-    .about-line::after {
-        content: '';
-        position: absolute;
-        top: -8%;
-        left: -15%;
-        height: 1px;
-        width: 170%;
-        background: #FFF;
-        transform: rotate(-2deg);
-    }
-
-    .about-line::before {
-        content: '';
-        position: absolute;
-        bottom: -8%;
-        right: -15%;
-        height: 1px;
-        width: 170%;
-        background: #FFF;
-        transform: rotate(-2deg);
-    }
-
-    .project-line,
-    .servie-line,
-    .about-line,
-    .upcoming-line,
-    .hro-line {
-        position: relative;
-    }
-
-    .project-line::after {
-        content: '';
-        position: absolute;
-        top: -8%;
-        left: -2%;
-        height: 1px;
-        width: 150%;
-        background: black;
-        transform: rotate(-2deg);
-    }
-
-    .project-line::before {
-        content: '';
-        position: absolute;
-        bottom: -8%;
-        right: -2%;
-        height: 1px;
-        width: 150%;
-        background: black;
-        transform: rotate(-2deg);
-    }
-
-    .servie-line::after {
-        content: '';
-        position: absolute;
-        top: -13%;
-        left: 40%;
-        height: 1px;
-        width: 32%;
-        background: white;
-        transform: rotate(-2deg);
-    }
-
-    .servie-line::before {
-        content: '';
-        position: absolute;
-        bottom: -8%;
-        right: 40%;
-        height: 1px;
-        width: 31%;
-        background: white;
-        transform: rotate(-2deg);
-    }
-
-    .upcoming-line::after {
-        content: '';
-        position: absolute;
-        top: -18%;
-        left: 39%;
-        height: 1px;
-        width: 29%;
-        background: white;
-        transform: rotate(-2deg);
-    }
-
-    .upcoming-line::before {
-        content: '';
-        position: absolute;
-        bottom: -8%;
-        right: 38%;
-        height: 1px;
-        width: 31%;
-        background: white;
-        transform: rotate(-2deg);
-    }
-
-    .hro-line::after {
-        content: '';
-        position: absolute;
-        top: -8%;
-        left: 15%;
-        height: 1px;
-        width: 95%;
-        background: white;
-        transform: rotate(-2deg);
-    }
-
-    .hro-line::before {
-        content: '';
-        position: absolute;
-        bottom: 3%;
-        right: 3%;
-        height: 1px;
-        width: 100%;
-        background: white;
-        transform: rotate(-2deg);
+}
+@media (min-width:992px) {
+    .hover-card:hover {
+        transform: scale(1.2);
+        z-index: 1;
+        margin-top: -7px;
     }
 }
 @media (min-width:1024px) {
+    .bg-hero{
+        min-height: 100% !important ;
+    }
     .padding-y{
         padding: 118px 0px;
     }
